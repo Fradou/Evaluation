@@ -1,3 +1,7 @@
+media:
+    resource: "@MediaBundle/Resources/config/routing/album.yml"
+    prefix:   /
+
 media_homepage:
     path:     /
     defaults: { _controller: MediaBundle:Default:index }

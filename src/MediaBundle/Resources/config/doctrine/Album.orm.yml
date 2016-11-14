@@ -1,0 +1,24 @@
+MediaBundle\Entity\Album:
+    type: entity
+    table: null
+    repositoryClass: MediaBundle\Repository\AlbumRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+        artiste:
+            type: string
+            length: 255
+        genre:
+            type: string
+            length: 255
+        support:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
