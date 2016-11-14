@@ -3,6 +3,7 @@
 namespace MediaBundle\Controller;
 
 use MediaBundle\Entity\Album;
+use MediaBundle\Entity\Commentaire;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -55,14 +56,26 @@ class AlbumController extends Controller
      * Finds and displays a album entity.
      *
      */
-    public function showAction(Album $album)
+    public function showAction(Album $album, Request $request)
     {
         $deleteForm = $this->createDeleteForm($album);
         $comment = $album->getCommentaire();
 
+        $commentaire = new Commentaire();
+        $form = $this->createForm('MediaBundle\Form\CommentaireType', $commentaire);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($commentaire);
+            $em->flush($commentaire);
+        }
+
+
         return $this->render('album/show.html.twig', array(
             'album' => $album,
             'comment' => $comment,
+            'form' => $form->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
