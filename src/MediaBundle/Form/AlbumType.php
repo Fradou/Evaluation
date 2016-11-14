@@ -3,6 +3,7 @@
 namespace MediaBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -13,7 +14,9 @@ class AlbumType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('title')->add('artiste')->add('genre')->add('support')        ;
+        $builder->add('title')->add('artiste')
+            ->add('genre', ChoiceType::class, array ('choices'=> array('Hiphop'=>'Hiphop', 'Soul'=>'Soul', 'Rock'=>'Rock')))
+            ->add('support', ChoiceType::class, array ('choices'=> array('Vinyl'=>'Vinyl', 'CD'=>'CD', 'Cassette'=>'Cassette')));
     }
     
     /**
