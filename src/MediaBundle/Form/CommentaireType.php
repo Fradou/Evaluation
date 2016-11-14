@@ -3,6 +3,7 @@
 namespace MediaBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -13,7 +14,7 @@ class CommentaireType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('utilisateur', 'text', ['empty_data' => 'Anonyme'])->add('comment')->add('album')        ;
+        $builder->add('utilisateur', TextType::class, array('empty_data'=> 'Anonyme', 'required'=> false ))->add('comment')->add('album')        ;
     }
     
     /**
