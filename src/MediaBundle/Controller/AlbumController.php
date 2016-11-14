@@ -58,9 +58,11 @@ class AlbumController extends Controller
     public function showAction(Album $album)
     {
         $deleteForm = $this->createDeleteForm($album);
+        $comment = $album->getCommentaire();
 
         return $this->render('album/show.html.twig', array(
             'album' => $album,
+            'comment' => $comment,
             'delete_form' => $deleteForm->createView(),
         ));
     }

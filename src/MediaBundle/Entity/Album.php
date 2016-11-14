@@ -32,6 +32,11 @@ class Album
      */
     private $support;
 
+    public function __toString()
+    {
+        return strval($this->id);
+    }
+
 
     /**
      * Get id

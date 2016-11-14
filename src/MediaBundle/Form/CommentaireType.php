@@ -13,7 +13,7 @@ class CommentaireType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('utilisateur')->add('comment')->add('album')        ;
+        $builder->add('utilisateur', 'text', ['empty_data' => 'Anonyme'])->add('comment')->add('album')        ;
     }
     
     /**
