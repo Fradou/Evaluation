@@ -2,7 +2,13 @@
 
 {% block body %}
     <h1>Albums list</h1>
-
+<div class="idx_form">
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <br>
+    <input type="submit" value="Trier" />
+    {{ form_end(form) }}
+</div>
     <table>
         <thead>
             <tr>

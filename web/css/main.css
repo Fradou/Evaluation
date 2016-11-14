@@ -15,16 +15,8 @@ table {
     margin: auto;
 }
 
-div label {
-    width: 250px;
-}
-
 body {
     margin: 0;
-}
-
-#mediabundle_album div label {
-    width: 350px;
 }
 
 .album_show {
