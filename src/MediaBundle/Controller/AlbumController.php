@@ -6,6 +6,10 @@ use MediaBundle\Entity\Album;
 use MediaBundle\Entity\Commentaire;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use MediaBundle\Form\CommentaireType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use MediaBundle\Form\AlbumType;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * Album controller.
@@ -39,6 +43,17 @@ class AlbumController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            /* Ajout recup et gestion file */
+            $file = $album->getImg();
+            $fileName = md5(uniqid()).'.'.$file->guessExtension();
+            $file->move(
+                $this->getParameter('brochures_directory'),
+                $fileName
+            );
+            $album->setImg($fileName);
+
+            /* Reprise code standard */
             $em = $this->getDoctrine()->getManager();
             $em->persist($album);
             $em->flush($album);

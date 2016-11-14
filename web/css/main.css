@@ -30,3 +30,8 @@ body {
 .album_show {
     width: 100%;
 }
+
+.alb_img {
+    height: 250px;
+    width:auto;
+}

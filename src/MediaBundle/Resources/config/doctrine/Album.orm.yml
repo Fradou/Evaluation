@@ -21,6 +21,10 @@ MediaBundle\Entity\Album:
         support:
             type: string
             length: 255
+        img:
+            type: string
+            length: 255
+            nullable: true
     oneToMany:
         commentaire:
             targetEntity: Commentaire

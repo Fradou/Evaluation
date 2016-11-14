@@ -2,7 +2,7 @@
 
 {% block body %}
     <div class="container-fluid">
-        <h1>Album</h1>
+        <h1>{{ album.title }}</h1>
         <div class="row">
             <div class="col-xs-offset-2 col-xs-8">
                 <table class="album_show">
@@ -10,10 +10,6 @@
                     <tr>
                         <th>Id</th>
                         <td>{{ album.id }}</td>
-                    </tr>
-                    <tr>
-                        <th>Title</th>
-                        <td>{{ album.title }}</td>
                     </tr>
                     <tr>
                         <th>Artiste</th>
@@ -29,7 +25,14 @@
                     </tr>
                     </tbody>
                 </table>
+                {% if album.img %}
+                    <div class="col-xs-offset-2 col-xs-8">
+                        <img class="alb_img" src="/img/album_cover/{{ album.img }}" >
+                    </div>
+                {% endif %}
+
             </div>
+
         </div>
         <div class="row">
             <div class="col-xs-offset-2 col-xs-8">

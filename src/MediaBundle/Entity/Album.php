@@ -190,4 +190,33 @@ class Album
     {
         return $this->commentaire;
     }
+    /**
+     * @var string
+     */
+    private $img;
+
+
+    /**
+     * Set img
+     *
+     * @param string $img
+     *
+     * @return Album
+     */
+    public function setImg($img)
+    {
+        $this->img = $img;
+
+        return $this;
+    }
+
+    /**
+     * Get img
+     *
+     * @return string
+     */
+    public function getImg()
+    {
+        return $this->img;
+    }
 }
