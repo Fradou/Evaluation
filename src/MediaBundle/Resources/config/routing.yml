@@ -1,0 +1,3 @@
+media_homepage:
+    path:     /
+    defaults: { _controller: MediaBundle:Default:index }

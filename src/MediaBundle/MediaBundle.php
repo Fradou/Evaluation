@@ -1,9 +1,9 @@
 <?php
 
-namespace AppBundle;
+namespace MediaBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class AppBundle extends Bundle
+class MediaBundle extends Bundle
 {
 }
