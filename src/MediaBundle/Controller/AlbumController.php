@@ -37,7 +37,7 @@ class AlbumController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($albumc);
-            return $this->redirectToRoute('_index', array('genre' => $albumc->getGenre()));
+            return $this->redirectToRoute('_index', array('genre' => $albumc->getGenre() ));
         }
 
         return $this->render('album/index.html.twig', array(
