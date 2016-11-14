@@ -1,0 +1,19 @@
+commentaire_index:
+    path:     /
+    defaults: { _controller: "MediaBundle:Commentaire:index" }
+    methods:  GET
+
+commentaire_show:
+    path:     /{id}/show
+    defaults: { _controller: "MediaBundle:Commentaire:show" }
+    methods:  GET
+
+commentaire_new:
+    path:     /new
+    defaults: { _controller: "MediaBundle:Commentaire:new" }
+    methods:  [GET, POST]
+
+commentaire_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MediaBundle:Commentaire:delete" }
+    methods:  DELETE

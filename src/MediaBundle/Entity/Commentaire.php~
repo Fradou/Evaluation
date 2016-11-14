@@ -80,33 +80,5 @@ class Commentaire
     {
         return $this->comment;
     }
-    /**
-     * @var \MediaBundle\Entity\Album
-     */
-    private $album;
-
-
-    /**
-     * Set album
-     *
-     * @param \MediaBundle\Entity\Album $album
-     *
-     * @return Commentaire
-     */
-    public function setAlbum(\MediaBundle\Entity\Album $album = null)
-    {
-        $this->album = $album;
-
-        return $this;
-    }
-
-    /**
-     * Get album
-     *
-     * @return \MediaBundle\Entity\Album
-     */
-    public function getAlbum()
-    {
-        return $this->album;
-    }
 }
+

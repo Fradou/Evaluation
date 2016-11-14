@@ -5,3 +5,8 @@ media:
 media_homepage:
     path:     /
     defaults: { _controller: MediaBundle:Default:index }
+
+media_commentaire:
+    resource: "@MediaBundle/Resources/config/routing/commentaire.yml"
+    prefix:   /commentaire
+
